@@ -1,0 +1,12 @@
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Supermarket.Client.exe.config
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Supermarket.Client.exe
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Supermarket.Client.pdb
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Debug\Supermarket.Client.csprojResolveAssemblyReference.cache
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Debug\Supermarket.Client.exe
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Debug\Supermarket.Client.pdb
+C:\Users\Nikolay\Documents\GitHub\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Supermarket.Client.exe.config
+C:\Users\Nikolay\Documents\GitHub\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Debug\Supermarket.Client.exe
+C:\Users\Nikolay\Documents\GitHub\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Debug\Supermarket.Client.pdb
+C:\Users\Nikolay\Documents\GitHub\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Supermarket.Client.exe
+C:\Users\Nikolay\Documents\GitHub\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Supermarket.Client.pdb
+C:\Users\Nikolay\Documents\GitHub\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Debug\Supermarket.Client.csprojResolveAssemblyReference.cache
