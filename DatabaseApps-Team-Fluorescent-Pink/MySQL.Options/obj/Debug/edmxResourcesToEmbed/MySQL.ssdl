@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MySQLEntityNamespace.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="measures">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MEASURE_NAME" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="int" Nullable="false" />
+    <Property Name="MEASURE_ID" Type="int" Nullable="false" />
+    <Property Name="CATEGORY_ID" Type="int" Nullable="false" />
+    <Property Name="PRICE" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vendors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VENDOR_NAME" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <Association Name="products_ibfk_1">
+    <End Role="vendors" Type="Self.vendors" Multiplicity="1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vendors">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="VENDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="products_ibfk_2">
+    <End Role="measures" Type="Self.measures" Multiplicity="1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="measures">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="MEASURE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="products_ibfk_3">
+    <End Role="category" Type="Self.category" Multiplicity="1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="CATEGORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MySQLEntityNamespaceStoreContainer">
+    <EntitySet Name="category" EntityType="Self.category" Schema="supermarket" store:Type="Tables" />
+    <EntitySet Name="measures" EntityType="Self.measures" Schema="supermarket" store:Type="Tables" />
+    <EntitySet Name="products" EntityType="Self.products" Schema="supermarket" store:Type="Tables" />
+    <EntitySet Name="vendors" EntityType="Self.vendors" Schema="supermarket" store:Type="Tables" />
+    <AssociationSet Name="products_ibfk_1" Association="Self.products_ibfk_1">
+      <End Role="vendors" EntitySet="vendors" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="products_ibfk_2" Association="Self.products_ibfk_2">
+      <End Role="measures" EntitySet="measures" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="products_ibfk_3" Association="Self.products_ibfk_3">
+      <End Role="category" EntitySet="category" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

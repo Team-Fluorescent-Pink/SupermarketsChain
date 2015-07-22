@@ -1,0 +1,10 @@
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Release\Supermarket.Client.exe.config
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Release\Supermarket.Client.exe
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Release\Supermarket.Client.pdb
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Release\MySQL.Options.dll
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Release\EntityFramework.dll
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Release\MySQL.Options.pdb
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Release\EntityFramework.xml
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Release\Supermarket.Client.csprojResolveAssemblyReference.cache
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Release\Supermarket.Client.exe
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\obj\Release\Supermarket.Client.pdb

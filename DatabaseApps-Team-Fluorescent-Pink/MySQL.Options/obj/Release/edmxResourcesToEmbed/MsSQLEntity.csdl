@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="supermarketModelMsSQL" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ms_CATEGORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PRODUCTS" Relationship="Self.FK_PRODUCT_CATEGORY" FromRole="CATEGORY" ToRole="PRODUCTS" />
+  </EntityType>
+  <EntityType Name="ms_MEASURE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MEASURE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PRODUCTS" Relationship="Self.FK_PRODUCT_MEASURE" FromRole="MEASURES" ToRole="PRODUCTS" />
+  </EntityType>
+  <EntityType Name="ms_PRODUCT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MEASURE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CATEGORY_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="CATEGORY" Relationship="Self.FK_PRODUCT_CATEGORY" FromRole="PRODUCTS" ToRole="CATEGORY" />
+    <NavigationProperty Name="MEASURE" Relationship="Self.FK_PRODUCT_MEASURE" FromRole="PRODUCTS" ToRole="MEASURES" />
+    <NavigationProperty Name="VENDOR" Relationship="Self.FK_PRODUCT_VENDOR" FromRole="PRODUCTS" ToRole="VENDORS" />
+    <NavigationProperty Name="SALES" Relationship="Self.FK_SALES_PRODUCTS" FromRole="PRODUCTS" ToRole="SALES" />
+  </EntityType>
+  <EntityType Name="ms_SALE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QUANTITY" Type="Int32" Nullable="false" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="STORE_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REPORT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_SALES_PRODUCTS" FromRole="SALES" ToRole="PRODUCTS" />
+  </EntityType>
+  <EntityType Name="ms_VENDOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VENDOR_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PRODUCTS" Relationship="Self.FK_PRODUCT_VENDOR" FromRole="VENDORS" ToRole="PRODUCTS" />
+  </EntityType>
+  <Association Name="FK_PRODUCT_CATEGORY">
+    <End Role="CATEGORY" Type="supermarketModelMsSQL.ms_CATEGORY" Multiplicity="1" />
+    <End Role="PRODUCTS" Type="supermarketModelMsSQL.ms_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTS">
+        <PropertyRef Name="CATEGORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCT_MEASURE">
+    <End Role="MEASURES" Type="supermarketModelMsSQL.ms_MEASURE" Multiplicity="1" />
+    <End Role="PRODUCTS" Type="supermarketModelMsSQL.ms_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEASURES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTS">
+        <PropertyRef Name="MEASURE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCT_VENDOR">
+    <End Role="VENDORS" Type="supermarketModelMsSQL.ms_VENDOR" Multiplicity="1" />
+    <End Role="PRODUCTS" Type="supermarketModelMsSQL.ms_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENDORS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTS">
+        <PropertyRef Name="VENDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SALES_PRODUCTS">
+    <End Role="PRODUCTS" Type="supermarketModelMsSQL.ms_PRODUCT" Multiplicity="1" />
+    <End Role="SALES" Type="supermarketModelMsSQL.ms_SALE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SALES">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MsSQLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ms_CATEGORY" EntityType="supermarketModelMsSQL.ms_CATEGORY" />
+    <EntitySet Name="MEASURES" EntityType="supermarketModelMsSQL.ms_MEASURE" />
+    <EntitySet Name="PRODUCTS" EntityType="supermarketModelMsSQL.ms_PRODUCT" />
+    <EntitySet Name="SALES" EntityType="supermarketModelMsSQL.ms_SALE" />
+    <EntitySet Name="VENDORS" EntityType="supermarketModelMsSQL.ms_VENDOR" />
+    <AssociationSet Name="FK_PRODUCT_CATEGORY" Association="Self.FK_PRODUCT_CATEGORY">
+      <End Role="CATEGORY" EntitySet="ms_CATEGORY" />
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCT_MEASURE" Association="Self.FK_PRODUCT_MEASURE">
+      <End Role="MEASURES" EntitySet="MEASURES" />
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCT_VENDOR" Association="Self.FK_PRODUCT_VENDOR">
+      <End Role="VENDORS" EntitySet="VENDORS" />
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SALES_PRODUCTS" Association="Self.FK_SALES_PRODUCTS">
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+      <End Role="SALES" EntitySet="SALES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

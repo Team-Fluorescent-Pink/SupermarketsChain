@@ -1,0 +1,7 @@
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Release\MySQL.Options.dll.config
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Release\MySQL.Options.dll
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Release\MySQL.Options.pdb
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Release\EntityFramework.dll
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Release\EntityFramework.xml
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Release\MySQL.Options.dll
+C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Release\MySQL.Options.pdb

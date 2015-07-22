@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="supermarketModelMySQLStoreContainer" CdmEntityContainer="MySQLEntities">
+    <EntitySetMapping Name="my_category">
+      <EntityTypeMapping TypeName="supermarketModelMySQL.my_category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_measure">
+      <EntityTypeMapping TypeName="supermarketModelMySQL.my_measure">
+        <MappingFragment StoreEntitySet="measures">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MEASURE_NAME" ColumnName="MEASURE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_product">
+      <EntityTypeMapping TypeName="supermarketModelMySQL.my_product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+          <ScalarProperty Name="MEASURE_ID" ColumnName="MEASURE_ID" />
+          <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_vendor">
+      <EntityTypeMapping TypeName="supermarketModelMySQL.my_vendor">
+        <MappingFragment StoreEntitySet="vendors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VENDOR_NAME" ColumnName="VENDOR_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

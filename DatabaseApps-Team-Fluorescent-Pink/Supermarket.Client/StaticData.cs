@@ -2,6 +2,8 @@
 {
     using System;
     using System.Windows.Forms;
+    using MySQL.Options;
+    
     public static class StaticData
     {
         public static void Header()
@@ -36,7 +38,7 @@
             while (true)
             {
                 Console.WriteLine("\nOracle Database Options:");
-                Console.WriteLine("1) Display Agregated Data:");
+                Console.WriteLine("1) Display Aggregated Data:");
                 Console.WriteLine("0) Exit.");
                 Console.Write("\nPlease, select option: ");
                 sqlChoise = Console.ReadLine();
@@ -63,7 +65,7 @@
             while (true)
             {
                 Console.WriteLine("\nMS SQL Options:");
-                Console.WriteLine("1) Display Agregated Data:");
+                Console.WriteLine("1) Display Aggregated Data:");
                 Console.WriteLine("2) Load Data from Oracle Database.");
                 Console.WriteLine("3) Load Excel Reports from ZIP File");
                 Console.WriteLine("0) Exit.");
@@ -88,31 +90,11 @@
 
         public static void Display_MySQL_Menu()
         {
-            string sqlChoise;
-            bool sqlExit = false;
-
-            while (true)
-            {
-                Console.WriteLine("\nMySQL Options:");
-                Console.WriteLine("1) Display Agregated Data:");
-                Console.WriteLine("2) Load Data from MS SQL Database.");
-                Console.WriteLine("0) Exit.");
-                Console.Write("\nPlease, select option: ");
-                sqlChoise = Console.ReadLine();
-
-                switch (sqlChoise)
-                {
-                    case "0": sqlExit = true; break;
-                    case "1": Console.WriteLine("Selected option: " + sqlChoise); break;
-                    case "2": Console.WriteLine("Selected option: " + sqlChoise); break;
-                    default: Console.WriteLine("Invalid selection!"); break;
-                }
-
-                if (sqlExit)
-                {
-                    break;
-                }
-            }
+            Console.WriteLine("\nMySQL Options:");
+            Console.WriteLine("1) Display Aggregated Data:");
+            Console.WriteLine("2) Load Data from MS SQL Database.");
+            Console.WriteLine("0) Exit.");
+            Console.Write("\nPlease, select option: ");
         }
 
         private static void OpenFile()
