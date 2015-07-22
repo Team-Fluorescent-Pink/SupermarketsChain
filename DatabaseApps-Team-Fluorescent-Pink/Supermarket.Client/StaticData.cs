@@ -65,6 +65,7 @@
                 Console.WriteLine("\nMS SQL Options:");
                 Console.WriteLine("1) Display Agregated Data:");
                 Console.WriteLine("2) Load Data from Oracle Database.");
+                Console.WriteLine("3) Load Excel Reports from ZIP File");
                 Console.WriteLine("0) Exit.");
                 Console.Write("\nPlease, select option: ");
                 sqlChoise = Console.ReadLine();
@@ -73,7 +74,8 @@
                 {
                     case "0": sqlExit = true; break;
                     case "1": Console.WriteLine("Selected option: " + sqlChoise); break;
-                    case "2": OpenFile(); break;
+                    case "2": Console.WriteLine("Selected option: " + sqlChoise); break;
+                    case "3": OpenFile(); break;
                     default: Console.WriteLine("Invalid selection!"); break;
                 }
 
