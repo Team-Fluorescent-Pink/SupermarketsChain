@@ -3,7 +3,7 @@
     using System;
     using System.Windows.Forms;
 
-    using JSONReportsInMongoDB;
+    using JsonAndMongoDbExporter;
 
     using MySQL.Options;
     

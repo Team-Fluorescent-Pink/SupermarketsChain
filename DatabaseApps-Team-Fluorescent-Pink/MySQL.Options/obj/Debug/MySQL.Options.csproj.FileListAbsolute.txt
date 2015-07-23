@@ -13,3 +13,4 @@ D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team
 D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Debug\EntityFramework.xml
 D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Debug\MySQL.Options.dll
 D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Debug\MySQL.Options.pdb
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Debug\MySQL.Options.csprojResolveAssemblyReference.cache

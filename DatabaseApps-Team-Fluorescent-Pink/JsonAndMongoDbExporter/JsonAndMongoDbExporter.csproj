@@ -68,6 +68,7 @@
     <Compile Include="JsonAndMongoDbExporter.cs" />
     <Compile Include="MongoDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
