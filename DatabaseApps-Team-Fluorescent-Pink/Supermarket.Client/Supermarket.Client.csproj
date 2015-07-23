@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="main.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticData.cs" />
   </ItemGroup>
@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JsonAndMongoDbExporter\JsonAndMongoDbExporter.csproj">
+      <Project>{1fcf73c5-2b85-4bbb-a15b-3a831f582cda}</Project>
+      <Name>JsonAndMongoDbExporter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MySQL.Options\MySQL.Options.csproj">
       <Project>{2774223f-79ad-41ed-b1dc-a7c4232f9516}</Project>
       <Name>MySQL.Options</Name>

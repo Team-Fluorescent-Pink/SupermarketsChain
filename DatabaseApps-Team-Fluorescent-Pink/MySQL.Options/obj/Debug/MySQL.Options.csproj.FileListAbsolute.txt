@@ -6,3 +6,10 @@ C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\b
 C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Debug\EntityFramework.xml
 C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Debug\MySQL.Options.dll
 C:\Users\Nikolay\Desktop\Temp\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Debug\MySQL.Options.pdb
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Debug\MySQL.Options.dll.config
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Debug\MySQL.Options.dll
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Debug\MySQL.Options.pdb
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Debug\EntityFramework.dll
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\bin\Debug\EntityFramework.xml
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Debug\MySQL.Options.dll
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\MySQL.Options\obj\Debug\MySQL.Options.pdb
