@@ -32,3 +32,8 @@ D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team
 D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\EntityFramework.SqlServer.xml
 D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Newtonsoft.Json.dll
 D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\MongoDB.Driver.dll
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\MongoDB.Bson.dll
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\MongoDB.Driver.Core.dll
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\MongoDB.Driver.xml
+D:\Programming\Software_University\TeamWorks\SupermarketsChain\DatabaseApps-Team-Fluorescent-Pink\Supermarket.Client\bin\Debug\MongoDB.Bson.xml

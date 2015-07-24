@@ -4,8 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Newtonsoft.Json;
-
     using SqlSupermarketEntities;
 
     public static class JsonAndMongoDbExporter
@@ -57,10 +55,8 @@
                 reports.Add(newReport);
             }
 
-            foreach (var report in reports)
-            {
-                Console.WriteLine(JsonConvert.SerializeObject(report));
-            }
+            Json.GenerateJsonReports(reports);
+            MongoDb.InsertReportsInDatabase(reports);
 
             Console.ReadLine();
         }
