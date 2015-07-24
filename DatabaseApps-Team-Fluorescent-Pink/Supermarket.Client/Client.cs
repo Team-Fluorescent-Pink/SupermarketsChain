@@ -53,7 +53,7 @@
 
         private static void MySqlOptions()
         {
-            var mysql = new MySQLOpt();
+            //var mysql = new MySQLOpt();
             bool sqlExit = true;
 
             while (sqlExit)
@@ -65,10 +65,10 @@
                         sqlExit = false; 
                         break;
                     case "1": 
-                        mysql.AggregatedData(); 
+                        //mysql.AggregatedData(); 
                         break;
                     case "2": 
-                        mysql.LoadData(); 
+                        //mysql.LoadData(); 
                         break;
                     default: 
                         Console.WriteLine("Invalid selection!");
