@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlSupermarketEntities", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonAndMongoDbExporter", "JsonAndMongoDbExporter\JsonAndMongoDbExporter.csproj", "{1FCF73C5-2B85-4BBB-A15B-3A831F582CDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlEntities", "MySqlEntities\MySqlEntities.csproj", "{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1FCF73C5-2B85-4BBB-A15B-3A831F582CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FCF73C5-2B85-4BBB-A15B-3A831F582CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FCF73C5-2B85-4BBB-A15B-3A831F582CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
