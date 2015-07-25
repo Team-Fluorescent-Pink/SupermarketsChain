@@ -1,6 +1,7 @@
 ﻿namespace Supermarket.Client
 {
     using System;
+    using System.Linq;
     //using MySQL.Options;
 
     public class Client
@@ -21,12 +22,12 @@
 
                 switch (choice)
                 {
-                    case "0": exit = false; 
+                    case "0": exit = false;
                         break;
-                    case "1": 
-                        StaticData.DisplayOracleSqlMenu(); 
+                    case "1":
+                        StaticData.DisplayOracleSqlMenu();
                         break;
-                    case "2": 
+                    case "2":
                         StaticData.DisplayMsSqlMenu();
                         break;
                     case "3":
@@ -42,12 +43,12 @@
                         StaticData.DisplayMySqlMenu();
                         MySqlOptions();
                         break;
-                    case "8": 
+                    case "8":
                         break;
-                    default: 
-                        Console.WriteLine("Invalid selection!"); 
+                    default:
+                        Console.WriteLine("Invalid selection!");
                         break;
-                }     
+                }
             }
         }
 

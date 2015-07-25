@@ -40,6 +40,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\oracle\app\client\softuni\product\12.1.0\binaries\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\oracle\app\client\softuni\product\12.1.0\binaries\odp.net\managed\common\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -63,6 +71,10 @@
     <ProjectReference Include="..\JsonAndMongoDbExporter\JsonAndMongoDbExporter.csproj">
       <Project>{1fcf73c5-2b85-4bbb-a15b-3a831f582cda}</Project>
       <Name>JsonAndMongoDbExporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OracleEntities\OracleEntities.csproj">
+      <Project>{09a526e1-bada-4d31-9710-037205d97296}</Project>
+      <Name>OracleEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

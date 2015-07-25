@@ -7,23 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OracleSupermarketEntities
+namespace OracleEntities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MEASURE
+    public partial class PRODUCT
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MEASURE()
-        {
-            this.PRODUCTS = new HashSet<PRODUCT>();
-        }
-    
         public decimal ID { get; set; }
-        public string MEASURE_NAME { get; set; }
+        public string NAME { get; set; }
+        public decimal VENDOR_ID { get; set; }
+        public decimal MEASURE_ID { get; set; }
+        public decimal CATEGORY_ID { get; set; }
+        public decimal PRICE { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRODUCT> PRODUCTS { get; set; }
+        public virtual CATEGORY CATEGORY { get; set; }
+        public virtual MEASURE MEASURE { get; set; }
+        public virtual VENDOR VENDOR { get; set; }
     }
 }

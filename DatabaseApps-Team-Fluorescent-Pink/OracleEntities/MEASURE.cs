@@ -7,21 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OracleSupermarketEntities
+namespace OracleEntities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class VENDOR
+    public partial class MEASURE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public VENDOR()
+        public MEASURE()
         {
             this.PRODUCTS = new HashSet<PRODUCT>();
         }
     
         public decimal ID { get; set; }
-        public string VENDOR_NAME { get; set; }
+        public string MEASURE_NAME { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRODUCT> PRODUCTS { get; set; }

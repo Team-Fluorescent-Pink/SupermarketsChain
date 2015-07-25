@@ -7,7 +7,7 @@
     <ProjectGuid>{09A526E1-BADA-4D31-9710-037205D97296}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OracleSupermarketEntities</RootNamespace>
+    <RootNamespace>OracleEntities</RootNamespace>
     <AssemblyName>OracleSupermarketEntities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

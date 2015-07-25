@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OracleSupermarketEntities
+namespace OracleEntities
 {
     using System;
     using System.Data.Entity;
