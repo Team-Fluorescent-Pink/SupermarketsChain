@@ -5,13 +5,13 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermarket.Client", "Supermarket.Client\Supermarket.Client.csproj", "{82BAABFB-63A5-4713-8097-8DDC8E843ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQL.Options", "MySQL.Options\MySQL.Options.csproj", "{2774223F-79AD-41ED-B1DC-A7C4232F9516}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlSupermarketEntities", "SqlSupermarketEntities\SqlSupermarketEntities.csproj", "{145F7A9C-A6BB-4CA7-986C-7EFECD546A22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonAndMongoDbExporter", "JsonAndMongoDbExporter\JsonAndMongoDbExporter.csproj", "{1FCF73C5-2B85-4BBB-A15B-3A831F582CDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlEntities", "MySqlEntities\MySqlEntities.csproj", "{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleSupermarketEntities", "OracleSupermarketEntities\OracleSupermarketEntities.csproj", "{09A526E1-BADA-4D31-9710-037205D97296}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{82BAABFB-63A5-4713-8097-8DDC8E843ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82BAABFB-63A5-4713-8097-8DDC8E843ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82BAABFB-63A5-4713-8097-8DDC8E843ABF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2774223F-79AD-41ED-B1DC-A7C4232F9516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2774223F-79AD-41ED-B1DC-A7C4232F9516}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2774223F-79AD-41ED-B1DC-A7C4232F9516}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2774223F-79AD-41ED-B1DC-A7C4232F9516}.Release|Any CPU.Build.0 = Release|Any CPU
 		{145F7A9C-A6BB-4CA7-986C-7EFECD546A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{145F7A9C-A6BB-4CA7-986C-7EFECD546A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{145F7A9C-A6BB-4CA7-986C-7EFECD546A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A526E1-BADA-4D31-9710-037205D97296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A526E1-BADA-4D31-9710-037205D97296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A526E1-BADA-4D31-9710-037205D97296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A526E1-BADA-4D31-9710-037205D97296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
