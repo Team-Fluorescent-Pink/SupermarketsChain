@@ -64,10 +64,6 @@
       <Project>{1fcf73c5-2b85-4bbb-a15b-3a831f582cda}</Project>
       <Name>JsonAndMongoDbExporter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySQL.Options\MySQL.Options.csproj">
-      <Project>{2774223f-79ad-41ed-b1dc-a7c4232f9516}</Project>
-      <Name>MySQL.Options</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

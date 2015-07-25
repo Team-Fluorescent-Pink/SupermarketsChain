@@ -1,7 +1,7 @@
 ﻿namespace Supermarket.Client
 {
     using System;
-    using MySQL.Options;
+    //using MySQL.Options;
 
     public class Client
     {
