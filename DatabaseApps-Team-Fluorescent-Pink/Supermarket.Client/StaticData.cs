@@ -2,9 +2,9 @@
 {
     using System;
     using System.Windows.Forms;
-
+    
     using JsonAndMongoDbExporter;
-
+    using OracleImporter;
     //using MySQL.Options;
     
     public static class StaticData
@@ -87,7 +87,8 @@
                         Console.WriteLine("Selected option: " + sqlChoice); 
                         break;
                     case "2": 
-                        Console.WriteLine("Selected option: " + sqlChoice); 
+                        Console.WriteLine("Selected option: " + sqlChoice);
+                        CloneOracleDbToSql.Run();
                         break;
                     case "3": 
                         OpenFile(); 

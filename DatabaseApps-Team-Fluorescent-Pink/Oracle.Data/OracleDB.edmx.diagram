@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1923e8e4c87e48b7b1226812ef945b19" Name="Diagram1">
+        <EntityTypeShape EntityType="SupermarketChain.Data.CATEGORY" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketChain.Data.MEASURE" Width="1.5" PointX="5.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketChain.Data.PRODUCT" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketChain.Data.VENDOR" Width="1.5" PointX="5.5" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="SupermarketChain.Data.FK_PRODUCT_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketChain.Data.FK_PRODUCT_MEASURE" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketChain.Data.FK_PRODUCT_VENDOR" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
