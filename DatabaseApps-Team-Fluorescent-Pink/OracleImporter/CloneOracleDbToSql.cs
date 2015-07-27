@@ -10,10 +10,6 @@ namespace OracleImporter
     {
         public static void Run()
         {
-            var con = new MsSqlEntities();
-            var conp = con.Products.FirstOrDefault();
-            Console.WriteLine(conp);
-
             try
             {
                 using (var msContext = new MsSqlEntities())

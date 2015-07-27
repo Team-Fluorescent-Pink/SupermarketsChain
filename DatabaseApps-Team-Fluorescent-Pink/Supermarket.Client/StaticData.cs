@@ -1,4 +1,7 @@
-﻿namespace Supermarket.Client
+﻿using ExcelImporter;
+using MsSql.Data;
+
+namespace Supermarket.Client
 {
     using System;
     using System.Windows.Forms;
@@ -90,8 +93,10 @@
                         Console.WriteLine("Selected option: " + sqlChoice);
                         CloneOracleDbToSql.Run();
                         break;
-                    case "3": 
-                        OpenFile(); 
+                    case "3":
+                        var msContext = new MsSqlEntities();
+                        var data = new ExcelImport().GetSales(msContext);
+                        msContext.Sales.AddRange(data);
                         break;
                     default: 
                         Console.WriteLine("Invalid selection!"); 

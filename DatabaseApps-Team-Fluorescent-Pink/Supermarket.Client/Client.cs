@@ -1,4 +1,6 @@
-﻿namespace Supermarket.Client
+﻿using MsSql.Data;
+
+namespace Supermarket.Client
 {
     using System;
     using System.Linq;
@@ -16,7 +18,6 @@
                 Console.Clear();
                 StaticData.Header();
                 StaticData.DisplayMenu();
-
                 Console.Write("\nPlease, select option: ");
                 string choice = Console.ReadLine();
 

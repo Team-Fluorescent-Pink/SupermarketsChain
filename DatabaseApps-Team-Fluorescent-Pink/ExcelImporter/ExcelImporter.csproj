@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82BAABFB-63A5-4713-8097-8DDC8E843ABF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{EFA7E31A-A84E-422D-A412-34108CB04692}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Supermarket.Client</RootNamespace>
-    <AssemblyName>Supermarket.Client</AssemblyName>
+    <RootNamespace>ExcelImporter</RootNamespace>
+    <AssemblyName>ExcelImporter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytescout.Spreadsheet, Version=2.4.2.1447, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytescout.Spreadsheet.2.4.2.1447\lib\net45\Bytescout.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -40,19 +42,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\oracle\app\client\softuni\product\12.1.0\binaries\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\oracle\app\client\softuni\product\12.1.0\binaries\odp.net\managed\common\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,23 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="ExcelImport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticData.cs" />
+    <Compile Include="WorksheetSettings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExcelImporter\ExcelImporter.csproj">
-      <Project>{efa7e31a-a84e-422d-a412-34108cb04692}</Project>
-      <Name>ExcelImporter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JsonAndMongoDbExporter\JsonAndMongoDbExporter.csproj">
-      <Project>{1fcf73c5-2b85-4bbb-a15b-3a831f582cda}</Project>
-      <Name>JsonAndMongoDbExporter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MsSql.Data\MsSql.Data.csproj">
       <Project>{f981726e-6abd-4fc8-af1f-a8f9995c7513}</Project>
       <Name>MsSql.Data</Name>
@@ -85,18 +66,10 @@
       <Project>{176abc5c-56f8-4d24-a761-db937fa9939f}</Project>
       <Name>MsSql.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Oracle.Data\Oracle.Data.csproj">
-      <Project>{784a9078-edb3-47b5-a827-9d70caeb0404}</Project>
-      <Name>Oracle.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OracleEntities\OracleEntities.csproj">
-      <Project>{09a526e1-bada-4d31-9710-037205d97296}</Project>
-      <Name>OracleEntities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OracleImporter\OracleImporter.csproj">
-      <Project>{8e78391c-fc22-4881-8e19-b0b3cbd02746}</Project>
-      <Name>OracleImporter</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
