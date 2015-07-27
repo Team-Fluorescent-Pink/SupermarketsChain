@@ -8,10 +8,18 @@
 
     public static class JsonAndMongoDbExporter
     {
-        public static void ExportSalesToJsonAndMongoDb(DateTime fromDate, DateTime toDate)
+        public static bool ExportSalesToJsonAndMongoDb(DateTime fromDate, DateTime toDate)
         {
             var context = new MsSqlEntities();
-            var productIds = context.Sales.Select(s => s.ProductId).Distinct();
+            var productIds = context.Sales
+                .Where(s => s.Date >= fromDate && s.Date <= toDate)
+                .Select(s => s.ProductId)
+                .Distinct();
+
+            if (!productIds.Any())
+            {
+                return false;
+            }
 
             List<Report> reports = new List<Report>();
 
@@ -58,7 +66,7 @@
             Json.GenerateJsonReports(reports);
             MongoDb.InsertReportsInDatabase(reports);
 
-            Console.ReadLine();
+            return true;
         }
     }
 }

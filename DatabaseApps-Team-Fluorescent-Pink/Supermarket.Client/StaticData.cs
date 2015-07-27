@@ -158,7 +158,20 @@ namespace Supermarket.Client
                 }
             }
 
-            JsonAndMongoDbExporter.ExportSalesToJsonAndMongoDb(fromDate, toDate);
+            bool succsessfullExport = JsonAndMongoDbExporter.ExportSalesToJsonAndMongoDb(fromDate, toDate);
+
+            if (succsessfullExport)
+            {
+                Console.WriteLine("Reports succsessfully exported to json files and imported to MongoDb database.");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("There are now sales in this period");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
+            }
         }
 
         private static string OpenFile()
