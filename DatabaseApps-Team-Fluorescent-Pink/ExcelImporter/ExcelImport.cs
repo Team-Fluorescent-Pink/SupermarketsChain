@@ -94,6 +94,7 @@ namespace ExcelImporter
                         Product = product,
                         Supermarket = supermarket,
                         Quantity = quantity,
+                        UnitPrice = product.Price,
                         Sum = sum,
                         Date = date,
                         Vendor = product.Vendor
@@ -136,7 +137,7 @@ namespace ExcelImporter
                     Name = productName,
                     CategoryId = 2,
                     MeasureId = 2,
-                    VendorId = 4,
+                    Vendor = context.Vendors.Find(9),
                     Price = 31.2m
                 };
 
