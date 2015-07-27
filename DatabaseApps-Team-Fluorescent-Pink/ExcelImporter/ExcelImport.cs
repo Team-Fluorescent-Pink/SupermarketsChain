@@ -1,33 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using MsSql.Models;
-using MsSql.Data;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using Bytescout.Spreadsheet;
-
-namespace ExcelImporter
+﻿namespace ExcelImporter
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.IO;
+    using System.IO.Compression;
+    using System.Linq;
+
+    using Bytescout.Spreadsheet;
+
+    using MsSql.Data;
+    using MsSql.Models;
+
     public class ExcelImport
     {
         private const string DefaultZipPath = "../../SalesReports";
+
         private const string DefaultZipName = "Sample-Sales-Reports.zip";
+
         private const string DefaultDateFormat = "dd-MMM-yyyy";
-        private static readonly WorksheetSettings WorksheetSettings =
-            new WorksheetSettings
-            {
-                StartCell = 1,
-                StartCollumn = 1,
-                StartRow = 1,
-                EndRowContent = "Total sum:",
-                FirstContentRow = 3,
-                ProductCell = 1,
-                QuantityCell = 2,
-                UnitPriceCell = 3,
-                ProductSumCell = 4
-            };
+
+        private static readonly WorksheetSettings WorksheetSettings = new WorksheetSettings
+                                                                          {
+                                                                              StartCell = 1, 
+                                                                              StartCollumn = 1, 
+                                                                              StartRow = 1, 
+                                                                              EndRowContent =
+                                                                                  "Total sum:", 
+                                                                              FirstContentRow = 3, 
+                                                                              ProductCell = 1, 
+                                                                              QuantityCell = 2, 
+                                                                              UnitPriceCell = 3, 
+                                                                              ProductSumCell = 4
+                                                                          };
 
         public ExcelImport(string zipPath = DefaultZipPath, string zipName = DefaultZipName)
         {
@@ -39,11 +44,10 @@ namespace ExcelImporter
 
         public string ZipName { get; set; }
 
-        public IList<Sale> GetSales(MsSqlEntities msContext)
+        public IList<Sale> GetSales(MsSqlEntities context)
         {
-            
             var sales = new List<Sale>();
-            ExtractZip(this.ZipPath, this.ZipName);
+            this.ExtractZip(this.ZipPath, this.ZipName, DefaultZipPath);
             var reportsDirectories = Directory.GetDirectories(this.ZipPath);
             foreach (var directory in reportsDirectories)
             {
@@ -53,18 +57,22 @@ namespace ExcelImporter
 
                 foreach (var file in files)
                 {
-                    var sale = GetSaleFromXls(msContext, file, date);
+                    var sale = this.GetSaleFromXls(context, file, date);
                     sales.AddRange(sale);
                 }
             }
-            
-            msContext.Sales.AddRange(sales);
-            msContext.SaveChanges();
-            
+
+            if (Directory.Exists(DefaultZipPath))
+            {
+                Directory.Delete(DefaultZipPath, true);
+            }
+
+            // context.Sales.AddRange(sales);
+            // context.SaveChanges();
             return sales;
         }
 
-        private IList<Sale> GetSaleFromXls(MsSqlEntities msContext, string file, DateTime date)
+        private IList<Sale> GetSaleFromXls(MsSqlEntities context, string file, DateTime date)
         {
             IList<Sale> sales = new List<Sale>();
             var report = new Spreadsheet();
@@ -72,8 +80,9 @@ namespace ExcelImporter
             {
                 report.LoadFromFile(file);
                 Worksheet worksheet = report.Workbook.Worksheets.ByName("Sales");
-                
-                var supermarketName = worksheet.Cell(WorksheetSettings.StartRow, WorksheetSettings.StartCell).Value.ToString();
+
+                var supermarketName =
+                    worksheet.Cell(WorksheetSettings.StartRow, WorksheetSettings.StartCell).Value.ToString();
                 string productName;
                 Supermarket supermarket;
                 Product product;
@@ -83,22 +92,22 @@ namespace ExcelImporter
                 string checkContent = worksheet.Cell(currentRow, WorksheetSettings.ProductCell).ValueAsString;
                 while (checkContent != WorksheetSettings.EndRowContent)
                 {
-                    productName = worksheet.Cell(currentRow, WorksheetSettings.ProductCell).ValueAsString; 
+                    productName = worksheet.Cell(currentRow, WorksheetSettings.ProductCell).ValueAsString;
                     quantity = worksheet.Cell(currentRow, WorksheetSettings.QuantityCell).ValueAsInteger;
                     sum = decimal.Parse(worksheet.Cell(currentRow, WorksheetSettings.ProductSumCell).ValueAsString);
-                    product = CheckValidProduct(productName, msContext);
-                    supermarket = CheckSupermarketExist(supermarketName, msContext);
-                    
+                    product = this.CheckValidProduct(productName, context);
+                    supermarket = this.CheckSupermarketExist(supermarketName, context);
+
                     var sale = new Sale
-                    {
-                        Product = product,
-                        Supermarket = supermarket,
-                        Quantity = quantity,
-                        UnitPrice = product.Price,
-                        Sum = sum,
-                        Date = date,
-                        Vendor = product.Vendor
-                    };
+                                   {
+                                       Product = product, 
+                                       Supermarket = supermarket, 
+                                       Quantity = quantity, 
+                                       UnitPrice = product.Price, 
+                                       Sum = sum, 
+                                       Date = date, 
+                                       Vendor = product.Vendor
+                                   };
 
                     sales.Add(sale);
                     currentRow++;
@@ -109,14 +118,14 @@ namespace ExcelImporter
             return sales;
         }
 
-        private static Supermarket CheckSupermarketExist(string supermarketName, MsSqlEntities context)
+        private Supermarket CheckSupermarketExist(string supermarketName, MsSqlEntities context)
         {
             var supermarket = context.Supermarkets.FirstOrDefault(s => s.Name == supermarketName);
 
             if (supermarket == null)
-            {                
+            {
                 // TODO: Add new supermarket from report.
-                supermarket = new Supermarket {Name = supermarketName};
+                supermarket = new Supermarket { Name = supermarketName };
 
                 context.Supermarkets.Add(supermarket);
                 context.SaveChanges();
@@ -125,7 +134,7 @@ namespace ExcelImporter
             return supermarket;
         }
 
-        private static Product CheckValidProduct(string productName, MsSqlEntities context)
+        private Product CheckValidProduct(string productName, MsSqlEntities context)
         {
             var product = context.Products.FirstOrDefault(p => p.Name == productName);
 
@@ -133,30 +142,29 @@ namespace ExcelImporter
             {
                 // TODO: Add new products from report fuctionality.
                 product = new Product
-                {
-                    Name = productName,
-                    CategoryId = 2,
-                    MeasureId = 2,
-                    Vendor = context.Vendors.Find(9),
-                    Price = 31.2m
-                };
+                              {
+                                  Name = productName, 
+                                  CategoryId = 2, 
+                                  MeasureId = 2, 
+                                  Vendor = context.Vendors.Find(9), 
+                                  Price = 31.2m
+                              };
 
                 context.Products.Add(product);
                 context.SaveChanges();
             }
 
-
             return product;
         }
 
-        private void ExtractZip(string pathToArchive, string archiveName)
+        private void ExtractZip(string pathToArchive, string archiveName, string defaultZipPath)
         {
-            if (Directory.Exists(pathToArchive))
+            if (Directory.Exists(defaultZipPath))
             {
-                Directory.Delete(pathToArchive, true);
+                Directory.Delete(defaultZipPath, true);
             }
 
-            ZipFile.ExtractToDirectory("../../" + archiveName, pathToArchive);
+            ZipFile.ExtractToDirectory(pathToArchive + "\\" + archiveName, defaultZipPath);
         }
     }
 }

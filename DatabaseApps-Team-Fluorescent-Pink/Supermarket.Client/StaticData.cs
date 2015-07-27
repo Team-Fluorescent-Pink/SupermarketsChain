@@ -1,16 +1,18 @@
-﻿using System.IO;
-using ExcelImporter;
-using MsSql.Data;
-
-namespace Supermarket.Client
+﻿namespace Supermarket.Client
 {
     using System;
+    using System.IO;
     using System.Windows.Forms;
-    
+
+    using ExcelImporter;
+
     using JsonAndMongoDbExporter;
+
+    using MsSql.Data;
+
     using OracleImporter;
-    //using MySQL.Options;
-    
+
+    // using MySQL.Options;
     public static class StaticData
     {
         public static void Header()
@@ -51,13 +53,14 @@ namespace Supermarket.Client
 
                 switch (sqlChoice)
                 {
-                    case "0": sqlExit = true; 
+                    case "0":
+                        sqlExit = true;
                         break;
-                    case "1": 
-                        Console.WriteLine("Selected option: " + sqlChoice); 
+                    case "1":
+                        Console.WriteLine("Selected option: " + sqlChoice);
                         break;
-                    default: 
-                        Console.WriteLine("Invalid selection!"); 
+                    default:
+                        Console.WriteLine("Invalid selection!");
                         break;
                 }
 
@@ -84,28 +87,27 @@ namespace Supermarket.Client
 
                 switch (sqlChoice)
                 {
-                    case "0": 
-                        sqlExit = true; 
+                    case "0":
+                        sqlExit = true;
                         break;
-                    case "1": 
-                        Console.WriteLine("Selected option: " + sqlChoice); 
-                        OpenFile();
-                        var fileName = ExtractFileName(OpenFile());
-                        Console.WriteLine(fileName);
-                        //var filePath = ExtractPath(OpenFile());
-                        //Console.WriteLine(filePath);
+                    case "1":
+                        Console.WriteLine("Selected option: " + sqlChoice);
                         break;
-                    case "2": 
+                    case "2":
                         Console.WriteLine("Selected option: " + sqlChoice);
                         CloneOracleDbToSql.Run();
                         break;
                     case "3":
-                        var msContext = new MsSqlEntities();
-                        var data = new ExcelImport().GetSales(msContext);
-                        msContext.Sales.AddRange(data);
+                        Console.WriteLine("Selected option: " + sqlChoice);
+                        var context = new MsSqlEntities();
+                        var selectedFile = OpenFile();
+                        var fileName = ExtractFileName(selectedFile);
+                        var path = Path.GetDirectoryName(selectedFile);
+                        var data = new ExcelImport(path, fileName).GetSales(context);
+                        context.Sales.AddRange(data);
                         break;
-                    default: 
-                        Console.WriteLine("Invalid selection!"); 
+                    default:
+                        Console.WriteLine("Invalid selection!");
                         break;
                 }
 
@@ -179,43 +181,47 @@ namespace Supermarket.Client
             OpenFileDialog fd = new OpenFileDialog();
             fd.ShowDialog();
             string path = fd.FileName;
-            
+
             return path;
         }
 
-        //private static object ExtractPath(string openFile)
-        //{
+        // private static object ExtractPath(string openFile)
+        // {
 
-        //}
-
+        // }
 
         // Source - MSDN 
-        public static string ExtractFileName(string filepath)
+        private static string ExtractFileName(string filepath)
         {
             // If path ends with a "\", it's a path only so return String.Empty.
             if (filepath.Trim().EndsWith(@"\"))
-                return String.Empty;
+            {
+                return string.Empty;
+            }
 
             // Determine where last backslash is. 
             int position = filepath.LastIndexOf('\\');
+
             // If there is no backslash, assume that this is a filename. 
             if (position == -1)
             {
                 // Determine whether file exists in the current directory. 
                 if (File.Exists(Environment.CurrentDirectory + Path.DirectorySeparatorChar + filepath))
+                {
                     return filepath;
-                else
-                    return String.Empty;
+                }
+
+                return string.Empty;
             }
-            else
+
+            // Determine whether file exists using filepath. 
+            if (File.Exists(filepath))
             {
-                // Determine whether file exists using filepath. 
-                if (File.Exists(filepath))
-                    // Return filename without file path. 
-                    return filepath.Substring(position + 1);
-                else
-                    return String.Empty;
+                // Return filename without file path. 
+                return filepath.Substring(position + 1);
             }
+
+            return string.Empty;
         }
     }
 }
