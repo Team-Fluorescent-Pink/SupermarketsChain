@@ -1,11 +1,8 @@
-﻿using MsSql.Data;
-
-namespace Supermarket.Client
+﻿namespace Supermarket.Client
 {
     using System;
-    using System.Linq;
-    //using MySQL.Options;
 
+    // using MySQL.Options;
     public class Client
     {
         [STAThread]
@@ -23,7 +20,8 @@ namespace Supermarket.Client
 
                 switch (choice)
                 {
-                    case "0": exit = false;
+                    case "0":
+                        exit = false;
                         break;
                     case "1":
                         StaticData.DisplayOracleSqlMenu();
@@ -55,7 +53,7 @@ namespace Supermarket.Client
 
         private static void MySqlOptions()
         {
-            //var mysql = new MySQLOpt();
+            // var mysql = new MySQLOpt();
             bool sqlExit = true;
 
             while (sqlExit)
@@ -63,16 +61,18 @@ namespace Supermarket.Client
                 string sqlChoise = Console.ReadLine();
                 switch (sqlChoise)
                 {
-                    case "0": 
-                        sqlExit = false; 
+                    case "0":
+                        sqlExit = false;
                         break;
-                    case "1": 
-                        //mysql.AggregatedData(); 
+                    case "1":
+
+                        // mysql.AggregatedData(); 
                         break;
-                    case "2": 
-                        //mysql.LoadData(); 
+                    case "2":
+
+                        // mysql.LoadData(); 
                         break;
-                    default: 
+                    default:
                         Console.WriteLine("Invalid selection!");
                         break;
                 }
