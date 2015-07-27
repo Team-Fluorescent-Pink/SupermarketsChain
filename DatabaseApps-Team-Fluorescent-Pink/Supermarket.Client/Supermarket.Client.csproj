@@ -89,10 +89,6 @@
       <Project>{784a9078-edb3-47b5-a827-9d70caeb0404}</Project>
       <Name>Oracle.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OracleEntities\OracleEntities.csproj">
-      <Project>{09a526e1-bada-4d31-9710-037205d97296}</Project>
-      <Name>OracleEntities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OracleImporter\OracleImporter.csproj">
       <Project>{8e78391c-fc22-4881-8e19-b0b3cbd02746}</Project>
       <Name>OracleImporter</Name>
