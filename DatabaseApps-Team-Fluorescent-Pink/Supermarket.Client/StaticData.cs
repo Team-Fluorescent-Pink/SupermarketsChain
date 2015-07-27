@@ -7,10 +7,9 @@
     using ExcelImporter;
 
     using JsonAndMongoDbExporter;
-
     using MsSql.Data;
-
     using OracleImporter;
+    using PdfGenerator;
 
     // using MySQL.Options;
     public static class StaticData
@@ -116,6 +115,55 @@
                 {
                     break;
                 }
+            }
+        }
+
+        public static void GeneratePdfSalesReports()
+        {
+            DateTime fromDate = new DateTime();
+            DateTime toDate = new DateTime();
+            bool isCorrectFromDate = false;
+            bool isCorrectToDate = false;
+
+            Console.Write("Enter sales from date: ");
+            while (!isCorrectFromDate)
+            {
+                isCorrectFromDate = DateTime.TryParse(Console.ReadLine(), out fromDate);
+                if (!isCorrectFromDate)
+                {
+                    Console.Write("Wrong from date, please enter date again: ");
+                }
+            }
+
+            Console.Write("Enter sales to date: ");
+            while (!isCorrectToDate)
+            {
+                isCorrectToDate = DateTime.TryParse(Console.ReadLine(), out toDate);
+                if (toDate < fromDate)
+                {
+                    isCorrectToDate = false;
+                }
+
+                if (!isCorrectToDate)
+                {
+                    Console.WriteLine("To date must be after or equal to from date.");
+                    Console.Write("Wrong to date, please enter date again: ");
+                }
+            }
+
+            bool successfullyGeneratedPdf = PdfGenerator.GeneratePdfReports(fromDate, toDate);
+
+            if (successfullyGeneratedPdf)
+            {
+                Console.WriteLine("PDF Sales Reports succsessfully generated.");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("There are now sales in this period");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
             }
         }
 

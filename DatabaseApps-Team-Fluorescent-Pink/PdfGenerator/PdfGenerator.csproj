@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82BAABFB-63A5-4713-8097-8DDC8E843ABF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D420C3E2-F258-4CAC-9143-E54D48EDE2E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Supermarket.Client</RootNamespace>
-    <AssemblyName>Supermarket.Client</AssemblyName>
+    <RootNamespace>PdfGenerator</RootNamespace>
+    <AssemblyName>PdfGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,19 +38,13 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\oracle\app\client\softuni\product\12.1.0\binaries\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\oracle\app\client\softuni\product\12.1.0\binaries\odp.net\managed\common\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,23 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="PdfGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExcelImporter\ExcelImporter.csproj">
-      <Project>{efa7e31a-a84e-422d-a412-34108cb04692}</Project>
-      <Name>ExcelImporter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JsonAndMongoDbExporter\JsonAndMongoDbExporter.csproj">
-      <Project>{1fcf73c5-2b85-4bbb-a15b-3a831f582cda}</Project>
-      <Name>JsonAndMongoDbExporter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MsSql.Data\MsSql.Data.csproj">
       <Project>{f981726e-6abd-4fc8-af1f-a8f9995c7513}</Project>
       <Name>MsSql.Data</Name>
@@ -84,18 +67,6 @@
     <ProjectReference Include="..\MsSql.Models\MsSql.Models.csproj">
       <Project>{176abc5c-56f8-4d24-a761-db937fa9939f}</Project>
       <Name>MsSql.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Oracle.Data\Oracle.Data.csproj">
-      <Project>{784a9078-edb3-47b5-a827-9d70caeb0404}</Project>
-      <Name>Oracle.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OracleImporter\OracleImporter.csproj">
-      <Project>{8e78391c-fc22-4881-8e19-b0b3cbd02746}</Project>
-      <Name>OracleImporter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PdfGenerator\PdfGenerator.csproj">
-      <Project>{d420c3e2-f258-4cac-9143-e54d48ede2e3}</Project>
-      <Name>PdfGenerator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

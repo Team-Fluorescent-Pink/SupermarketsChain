@@ -30,6 +30,7 @@
                         StaticData.DisplayMsSqlMenu();
                         break;
                     case "3":
+                        StaticData.GeneratePdfSalesReports();
                         break;
                     case "4":
                         break;

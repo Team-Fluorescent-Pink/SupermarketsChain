@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsSql.Models", "MsSql.Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelImporter", "ExcelImporter\ExcelImporter.csproj", "{EFA7E31A-A84E-422D-A412-34108CB04692}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGenerator", "PdfGenerator\PdfGenerator.csproj", "{D420C3E2-F258-4CAC-9143-E54D48EDE2E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{EFA7E31A-A84E-422D-A412-34108CB04692}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFA7E31A-A84E-422D-A412-34108CB04692}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFA7E31A-A84E-422D-A412-34108CB04692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D420C3E2-F258-4CAC-9143-E54D48EDE2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D420C3E2-F258-4CAC-9143-E54D48EDE2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D420C3E2-F258-4CAC-9143-E54D48EDE2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D420C3E2-F258-4CAC-9143-E54D48EDE2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{F981726E-6ABD-4FC8-AF1F-A8F9995C7513} = {2C9CC354-E342-4057-A954-9A5C4C1D3B87}
 		{176ABC5C-56F8-4D24-A761-DB937FA9939F} = {2C9CC354-E342-4057-A954-9A5C4C1D3B87}
 		{EFA7E31A-A84E-422D-A412-34108CB04692} = {2C9CC354-E342-4057-A954-9A5C4C1D3B87}
+		{D420C3E2-F258-4CAC-9143-E54D48EDE2E3} = {2C9CC354-E342-4057-A954-9A5C4C1D3B87}
 	EndGlobalSection
 EndGlobal
