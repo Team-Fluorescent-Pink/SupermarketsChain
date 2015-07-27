@@ -48,7 +48,7 @@
         {
             var sales = new List<Sale>();
             this.ExtractZip(this.ZipPath, this.ZipName, DefaultZipPath);
-            var reportsDirectories = Directory.GetDirectories(this.ZipPath);
+            var reportsDirectories = Directory.GetDirectories(DefaultZipPath);
             foreach (var directory in reportsDirectories)
             {
                 var files = Directory.GetFiles(directory);
