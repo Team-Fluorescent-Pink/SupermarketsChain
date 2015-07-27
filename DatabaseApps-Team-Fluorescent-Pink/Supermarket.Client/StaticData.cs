@@ -140,8 +140,14 @@ namespace Supermarket.Client
             while (!isCorrectToDate)
             {
                 isCorrectToDate = DateTime.TryParse(Console.ReadLine(), out toDate);
+                if (toDate < fromDate)
+                {
+                    isCorrectToDate = false;
+                }
+
                 if (!isCorrectToDate)
                 {
+                    Console.WriteLine("To date must be after or equal to from date.");
                     Console.Write("Wrong to date, please enter date again: ");
                 }
             }

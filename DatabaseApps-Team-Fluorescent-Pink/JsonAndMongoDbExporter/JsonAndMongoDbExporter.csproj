@@ -75,9 +75,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SqlSupermarketEntities\SqlSupermarketEntities.csproj">
-      <Project>{145f7a9c-a6bb-4ca7-986c-7efecd546a22}</Project>
-      <Name>SqlSupermarketEntities</Name>
+    <ProjectReference Include="..\MsSql.Data\MsSql.Data.csproj">
+      <Project>{f981726e-6abd-4fc8-af1f-a8f9995c7513}</Project>
+      <Name>MsSql.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MsSql.Models\MsSql.Models.csproj">
+      <Project>{176abc5c-56f8-4d24-a761-db937fa9939f}</Project>
+      <Name>MsSql.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

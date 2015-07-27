@@ -11,7 +11,7 @@
         {
             foreach (var report in reports)
             {
-                using (FileStream fs = File.Open("../../../" + report.ProductId + ".json", FileMode.Create))
+                using (FileStream fs = File.Open("../../../Json-Reports/" + report.ProductId + ".json", FileMode.Create))
                 using (StreamWriter sw = new StreamWriter(fs))
                 using (JsonWriter jw = new JsonTextWriter(sw))
                 {

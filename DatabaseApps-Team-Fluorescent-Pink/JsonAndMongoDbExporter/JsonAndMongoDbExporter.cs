@@ -4,44 +4,44 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using SqlSupermarketEntities;
+    using MsSql.Data;
 
     public static class JsonAndMongoDbExporter
     {
         public static void ExportSalesToJsonAndMongoDb(DateTime fromDate, DateTime toDate)
         {
-            var context = new supermarketEntities();
-            var productIds = context.SALES.Select(s => s.PRODUCT_ID).Distinct();
+            var context = new MsSqlEntities();
+            var productIds = context.Sales.Select(s => s.ProductId).Distinct();
 
             List<Report> reports = new List<Report>();
 
             foreach (var productId in productIds)
             {
-                var productName = context.SALES
-                    .Where(s => s.PRODUCT_ID == productId &&
-                        s.REPORT_DATE >= fromDate && 
-                        s.REPORT_DATE <= toDate)
-                    .Select(s => s.PRODUCT.NAME)
+                var productName = context.Sales
+                    .Where(s => s.ProductId == productId &&
+                        s.Date >= fromDate && 
+                        s.Date <= toDate)
+                    .Select(s => s.Product.Name)
                     .FirstOrDefault();
 
-                var vendorName = context.SALES
-                    .Where(s => s.PRODUCT_ID == productId &&
-                        s.REPORT_DATE >= fromDate &&
-                        s.REPORT_DATE <= toDate)
-                    .Select(s => s.PRODUCT.VENDOR.VENDOR_NAME)
+                var vendorName = context.Sales
+                    .Where(s => s.ProductId == productId &&
+                        s.Date >= fromDate &&
+                        s.Date <= toDate)
+                    .Select(s => s.Product.Vendor.Name)
                     .FirstOrDefault();
 
-                var quantity = context.SALES
-                    .Where(s => s.PRODUCT_ID == productId &&
-                        s.REPORT_DATE >= fromDate &&
-                        s.REPORT_DATE <= toDate)
-                    .Sum(s => s.QUANTITY);
+                var quantity = context.Sales
+                    .Where(s => s.ProductId == productId &&
+                        s.Date >= fromDate &&
+                        s.Date <= toDate)
+                    .Sum(s => s.Quantity);
 
-                var totalPrice = context.SALES
-                    .Where(s => s.PRODUCT_ID == productId &&
-                        s.REPORT_DATE >= fromDate &&
-                        s.REPORT_DATE <= toDate)
-                    .Sum(s => s.QUANTITY * s.UNIT_PRICE);
+                var totalPrice = context.Sales
+                    .Where(s => s.ProductId == productId &&
+                        s.Date >= fromDate &&
+                        s.Date <= toDate)
+                    .Sum(s => s.Quantity * s.UnitPrice);
 
                 Report newReport = new Report
                 {
