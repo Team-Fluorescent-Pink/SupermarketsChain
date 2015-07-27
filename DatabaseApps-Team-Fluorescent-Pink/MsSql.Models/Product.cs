@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MsSql.Models
+﻿namespace MsSql.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Product
     {
         private ICollection<Sale> sales;
@@ -37,8 +37,15 @@ namespace MsSql.Models
 
         public virtual ICollection<Sale> Sales
         {
-            get { return this.sales; }
-            set { this.sales = value; }
+            get
+            {
+                return this.sales;
+            }
+
+            set
+            {
+                this.sales = value;
+            }
         }
     }
 }

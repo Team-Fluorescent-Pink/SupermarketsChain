@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace MsSql.Models
+﻿namespace MsSql.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Vendor
     {
-        private ICollection<Product> products;
-        private ICollection<Sale> sales;
         private ICollection<Expense> expenses;
+
+        private ICollection<Product> products;
+
+        private ICollection<Sale> sales;
 
         public Vendor()
         {
@@ -24,20 +26,41 @@ namespace MsSql.Models
 
         public virtual ICollection<Sale> Sales
         {
-            get { return this.sales; }
-            set { this.sales = value; }
+            get
+            {
+                return this.sales;
+            }
+
+            set
+            {
+                this.sales = value;
+            }
         }
 
         public virtual ICollection<Product> Products
         {
-            get { return this.products; }
-            set { this.products = value; }
+            get
+            {
+                return this.products;
+            }
+
+            set
+            {
+                this.products = value;
+            }
         }
 
         public virtual ICollection<Expense> Expenses
         {
-            get { return this.expenses; }
-            set { this.expenses = value; }
+            get
+            {
+                return this.expenses;
+            }
+
+            set
+            {
+                this.expenses = value;
+            }
         }
     }
 }

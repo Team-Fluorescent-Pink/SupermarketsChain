@@ -105,6 +105,7 @@
                         var path = Path.GetDirectoryName(selectedFile);
                         var data = new ExcelImport(path, fileName).GetSales(context);
                         context.Sales.AddRange(data);
+                        context.SaveChanges();
                         break;
                     default:
                         Console.WriteLine("Invalid selection!");

@@ -1,21 +1,24 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MsSql.Models
+﻿namespace MsSql.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Sale
     {
+        private Vendor vendor;
+
+        private Supermarket supermarket;
+
         public Sale()
         {
-
         }
 
         public Sale(Vendor vendor, int productId, Supermarket supermarket, decimal unitPrice, int quantity)
         {
-            this.Vendor = vendor;
+            this.vendor = vendor;
             this.ProductId = productId;
-            this.Supermarket = supermarket;
+            this.supermarket = supermarket;
             this.UnitPrice = unitPrice;
             this.Quantity = quantity;
             this.Sum = this.Quantity * this.UnitPrice;
@@ -41,8 +44,30 @@ namespace MsSql.Models
 
         public decimal Sum { get; set; }
 
-        public virtual Supermarket Supermarket { get; set; }
+        public virtual Supermarket Supermarket
+        {
+            get
+            {
+                return this.supermarket;
+            }
 
-        public virtual Vendor Vendor { get; set; }
+            set
+            {
+                this.supermarket = value;
+            }
+        }
+
+        public virtual Vendor Vendor
+        {
+            get
+            {
+                return this.vendor;
+            }
+
+            set
+            {
+                this.vendor = value;
+            }
+        }
     }
 }

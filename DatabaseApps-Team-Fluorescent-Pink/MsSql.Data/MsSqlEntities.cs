@@ -1,8 +1,9 @@
-using System.Data.Entity;
-using MsSql.Models;
-
 namespace MsSql.Data
 {
+    using System.Data.Entity;
+
+    using MsSql.Models;
+
     public class MsSqlEntities : DbContext
     {
         public MsSqlEntities()
@@ -22,6 +23,6 @@ namespace MsSql.Data
 
         public virtual DbSet<Category> Categories { get; set; }
 
-        public virtual DbSet<Expense> Expenses { get; set; } 
+        public virtual DbSet<Expense> Expenses { get; set; }
     }
 }

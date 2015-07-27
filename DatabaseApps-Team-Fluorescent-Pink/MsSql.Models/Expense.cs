@@ -1,8 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MsSql.Models
+﻿namespace MsSql.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Expense
     {
         public int Id { get; set; }

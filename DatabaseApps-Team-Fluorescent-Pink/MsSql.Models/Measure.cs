@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace MsSql.Models
+﻿namespace MsSql.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Measure
     {
         public int Id { get; set; }

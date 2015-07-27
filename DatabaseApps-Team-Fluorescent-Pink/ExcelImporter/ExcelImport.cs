@@ -89,6 +89,7 @@
                 int quantity;
                 decimal sum;
                 int currentRow = WorksheetSettings.FirstContentRow;
+                supermarket = this.CheckSupermarketExist(supermarketName, context);
                 string checkContent = worksheet.Cell(currentRow, WorksheetSettings.ProductCell).ValueAsString;
                 while (checkContent != WorksheetSettings.EndRowContent)
                 {
@@ -96,8 +97,7 @@
                     quantity = worksheet.Cell(currentRow, WorksheetSettings.QuantityCell).ValueAsInteger;
                     sum = decimal.Parse(worksheet.Cell(currentRow, WorksheetSettings.ProductSumCell).ValueAsString);
                     product = this.CheckValidProduct(productName, context);
-                    supermarket = this.CheckSupermarketExist(supermarketName, context);
-
+                    
                     var sale = new Sale
                                    {
                                        Product = product, 
