@@ -1,4 +1,5 @@
-﻿using ExcelImporter;
+﻿using System.IO;
+using ExcelImporter;
 using MsSql.Data;
 
 namespace Supermarket.Client
@@ -88,6 +89,11 @@ namespace Supermarket.Client
                         break;
                     case "1": 
                         Console.WriteLine("Selected option: " + sqlChoice); 
+                        OpenFile();
+                        var fileName = ExtractFileName(OpenFile());
+                        Console.WriteLine(fileName);
+                        //var filePath = ExtractPath(OpenFile());
+                        //Console.WriteLine(filePath);
                         break;
                     case "2": 
                         Console.WriteLine("Selected option: " + sqlChoice);
@@ -108,7 +114,7 @@ namespace Supermarket.Client
                     break;
                 }
             }
-        }       
+        }
 
         public static void DisplayMySqlMenu()
         {
@@ -149,12 +155,48 @@ namespace Supermarket.Client
             JsonAndMongoDbExporter.ExportSalesToJsonAndMongoDb(fromDate, toDate);
         }
 
-        private static void OpenFile()
+        private static string OpenFile()
         {
             OpenFileDialog fd = new OpenFileDialog();
             fd.ShowDialog();
-            string fileName = fd.FileName;
-            Console.Write(fileName);
+            string path = fd.FileName;
+            
+            return path;
+        }
+
+        //private static object ExtractPath(string openFile)
+        //{
+
+        //}
+
+
+        // Source - MSDN 
+        public static string ExtractFileName(string filepath)
+        {
+            // If path ends with a "\", it's a path only so return String.Empty.
+            if (filepath.Trim().EndsWith(@"\"))
+                return String.Empty;
+
+            // Determine where last backslash is. 
+            int position = filepath.LastIndexOf('\\');
+            // If there is no backslash, assume that this is a filename. 
+            if (position == -1)
+            {
+                // Determine whether file exists in the current directory. 
+                if (File.Exists(Environment.CurrentDirectory + Path.DirectorySeparatorChar + filepath))
+                    return filepath;
+                else
+                    return String.Empty;
+            }
+            else
+            {
+                // Determine whether file exists using filepath. 
+                if (File.Exists(filepath))
+                    // Return filename without file path. 
+                    return filepath.Substring(position + 1);
+                else
+                    return String.Empty;
+            }
         }
     }
 }
