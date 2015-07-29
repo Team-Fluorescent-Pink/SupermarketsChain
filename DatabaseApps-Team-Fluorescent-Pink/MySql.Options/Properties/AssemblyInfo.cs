@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MySqlEntities")]
+[assembly: AssemblyTitle("MySql.Options")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MySqlEntities")]
+[assembly: AssemblyProduct("MySql.Options")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("70cedd3a-eb2c-4af2-93d9-87f200b84e5b")]
+[assembly: Guid("f3484d7f-04ff-4ab6-8c82-070ad70dcdfa")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA0CF775-8E7B-4D16-A5D2-27A2DB0258C8}</ProjectGuid>
+    <ProjectGuid>{9B2469A4-F8A6-4AFE-BB9A-913CB5AB95A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MySqlEntities</RootNamespace>
-    <AssemblyName>MySqlEntities</AssemblyName>
+    <RootNamespace>MySql.Contex</RootNamespace>
+    <AssemblyName>MySql.Contex</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,14 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.7\lib\net45\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.8.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="mysql.data.entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entities.6.8.3.0\lib\net45\mysql.data.entity.EF6.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -58,65 +54,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CATEGORY.cs">
-      <DependentUpon>MySqlSupermarketEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MEASURE.cs">
-      <DependentUpon>MySqlSupermarketEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MySqlSupermarketEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MySqlSupermarketEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MySqlSupermarketEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MySqlSupermarketEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MySqlSupermarketEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MySqlSupermarketEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="PRODUCT.cs">
-      <DependentUpon>MySqlSupermarketEntities.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MySql.Entities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SALE.cs">
-      <DependentUpon>MySqlSupermarketEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VENDOR.cs">
-      <DependentUpon>MySqlSupermarketEntities.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <EntityDeploy Include="MySqlSupermarketEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MySqlSupermarketEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="MySqlSupermarketEntities.edmx.diagram">
-      <DependentUpon>MySqlSupermarketEntities.edmx</DependentUpon>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MySqlSupermarketEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MySqlSupermarketEntities.edmx</DependentUpon>
-      <LastGenOutput>MySqlSupermarketEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="MySqlSupermarketEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MySqlSupermarketEntities.edmx</DependentUpon>
-      <LastGenOutput>MySqlSupermarketEntities.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\MySql.Models\MySql.Models.csproj">
+      <Project>{72ae98c3-0d07-449d-9c8e-8f1880c52d85}</Project>
+      <Name>MySql.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

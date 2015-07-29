@@ -2,12 +2,12 @@
 {
     using System;
 
-    // using MySQL.Options;
     public class Client
     {
         [STAThread]
         public static void Main()
         {
+  
             bool exit = true;
 
             while (exit)
@@ -41,7 +41,6 @@
                         break;
                     case "7":
                         StaticData.DisplayMySqlMenu();
-                        MySqlOptions();
                         break;
                     case "8":
                         break;
@@ -49,36 +48,6 @@
                         Console.WriteLine("Invalid selection!");
                         break;
                 }
-            }
-        }
-
-        private static void MySqlOptions()
-        {
-            // var mysql = new MySQLOpt();
-            bool sqlExit = true;
-
-            while (sqlExit)
-            {
-                string sqlChoise = Console.ReadLine();
-                switch (sqlChoise)
-                {
-                    case "0":
-                        sqlExit = false;
-                        break;
-                    case "1":
-
-                        // mysql.AggregatedData(); 
-                        break;
-                    case "2":
-
-                        // mysql.LoadData(); 
-                        break;
-                    default:
-                        Console.WriteLine("Invalid selection!");
-                        break;
-                }
-
-                StaticData.DisplayMySqlMenu();
             }
         }
     }

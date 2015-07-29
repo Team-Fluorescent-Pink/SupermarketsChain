@@ -41,9 +41,9 @@
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new Exception("Something wrong.");
+                throw new Exception("Something wrong." + e);
             }
         }
     }

@@ -11,7 +11,8 @@
     using OracleImporter;
     using PdfGenerator;
 
-    // using MySQL.Options;
+    using MySql.Options;
+
     public static class StaticData
     {
         public static void Header()
@@ -169,11 +170,34 @@
 
         public static void DisplayMySqlMenu()
         {
-            Console.WriteLine("\nMySQL Options:");
-            Console.WriteLine("1) Display Aggregated Data:");
-            Console.WriteLine("2) Load Data from MS SQL Database.");
-            Console.WriteLine("0) Exit.");
-            Console.Write("\nPlease, select option: ");
+            bool sqlExit = true;
+            
+            while (sqlExit)
+            {
+                Console.WriteLine("\nMySQL Options:");
+                Console.WriteLine("1) Display Aggregated Data:");
+                Console.WriteLine("2) Load Data from MS SQL Database.");
+                Console.WriteLine("0) Exit.");
+                Console.Write("\nPlease, select option: ");
+
+                string sqlChoise = Console.ReadLine();
+                switch (sqlChoise)
+                {
+
+                    case "0":
+                        sqlExit = false;
+                        break;
+                    case "1":
+                        MySqlOptions.AggregatedData();
+                        break;
+                    case "2":
+                        Console.WriteLine("MySQL Option 2");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection!");
+                        break;
+                }
+            }
         }
 
         public static void ExportToJsonAndMongoDb()
