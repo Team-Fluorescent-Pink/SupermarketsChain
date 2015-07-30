@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Xml;
 
 namespace XmlGenerator
 {
@@ -10,8 +8,10 @@ namespace XmlGenerator
     {
         public static bool GenerateXmlReports(DateTime fromDate, DateTime toDate)
         {
-            // TODO
-            return false;
+
+
+
+            return true;
         }
     }
 }
