@@ -209,7 +209,7 @@
             }
             else
             {
-                Console.WriteLine("Error");
+                Console.WriteLine("File has not been found");
                 Console.WriteLine("Pess ENTER to continue");
                 Console.ReadLine();
             }
