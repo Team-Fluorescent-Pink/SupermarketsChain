@@ -8,11 +8,10 @@
 
     using JsonAndMongoDbExporter;
     using MsSql.Data;
+    using MySql.Options;
     using OracleImporter;
     using PdfGenerator;
-
-    using MySql.Options;
-
+    
     public static class StaticData
     {
         public static void Header()
@@ -121,36 +120,9 @@
 
         public static void GeneratePdfSalesReports()
         {
-            DateTime fromDate = new DateTime();
-            DateTime toDate = new DateTime();
-            bool isCorrectFromDate = false;
-            bool isCorrectToDate = false;
-
-            Console.Write("Enter sales from date: ");
-            while (!isCorrectFromDate)
-            {
-                isCorrectFromDate = DateTime.TryParse(Console.ReadLine(), out fromDate);
-                if (!isCorrectFromDate)
-                {
-                    Console.Write("Wrong from date, please enter date again: ");
-                }
-            }
-
-            Console.Write("Enter sales to date: ");
-            while (!isCorrectToDate)
-            {
-                isCorrectToDate = DateTime.TryParse(Console.ReadLine(), out toDate);
-                if (toDate < fromDate)
-                {
-                    isCorrectToDate = false;
-                }
-
-                if (!isCorrectToDate)
-                {
-                    Console.WriteLine("To date must be after or equal to from date.");
-                    Console.Write("Wrong to date, please enter date again: ");
-                }
-            }
+            DateTime fromDate;
+            DateTime toDate;
+            ReadDateInterval(out fromDate, out toDate);
 
             bool successfullyGeneratedPdf = PdfGenerator.GeneratePdfReports(fromDate, toDate);
 
@@ -167,7 +139,7 @@
                 Console.ReadLine();
             }
         }
-
+        
         public static void DisplayMySqlMenu()
         {
             bool sqlExit = true;
@@ -202,36 +174,9 @@
 
         public static void ExportToJsonAndMongoDb()
         {
-            DateTime fromDate = new DateTime();
-            DateTime toDate = new DateTime();
-            bool isCorrectFromDate = false;
-            bool isCorrectToDate = false;
-
-            Console.Write("Enter sales from date: ");
-            while (!isCorrectFromDate)
-            {
-                isCorrectFromDate = DateTime.TryParse(Console.ReadLine(), out fromDate);
-                if (!isCorrectFromDate)
-                {
-                    Console.Write("Wrong from date, please enter date again: ");
-                }
-            }
-
-            Console.Write("Enter sales to date: ");
-            while (!isCorrectToDate)
-            {
-                isCorrectToDate = DateTime.TryParse(Console.ReadLine(), out toDate);
-                if (toDate < fromDate)
-                {
-                    isCorrectToDate = false;
-                }
-
-                if (!isCorrectToDate)
-                {
-                    Console.WriteLine("To date must be after or equal to from date.");
-                    Console.Write("Wrong to date, please enter date again: ");
-                }
-            }
+            DateTime fromDate;
+            DateTime toDate;
+            ReadDateInterval(out fromDate, out toDate);
 
             bool succsessfullExport = JsonAndMongoDbExporter.ExportSalesToJsonAndMongoDb(fromDate, toDate);
 
@@ -295,6 +240,40 @@
             }
 
             return string.Empty;
+        }
+
+        private static void ReadDateInterval(out DateTime fromDate, out DateTime toDate)
+        {
+            fromDate = new DateTime();
+            toDate = new DateTime();
+            bool isCorrectFromDate = false;
+            bool isCorrectToDate = false;
+
+            Console.Write("Enter sales from date: ");
+            while (!isCorrectFromDate)
+            {
+                isCorrectFromDate = DateTime.TryParse(Console.ReadLine(), out fromDate);
+                if (!isCorrectFromDate)
+                {
+                    Console.Write("Wrong from date, please enter date again: ");
+                }
+            }
+
+            Console.Write("Enter sales to date: ");
+            while (!isCorrectToDate)
+            {
+                isCorrectToDate = DateTime.TryParse(Console.ReadLine(), out toDate);
+                if (toDate < fromDate)
+                {
+                    isCorrectToDate = false;
+                }
+
+                if (!isCorrectToDate)
+                {
+                    Console.WriteLine("To date must be after or equal to from date.");
+                    Console.Write("Wrong to date, please enter date again: ");
+                }
+            }
         }
     }
 }
