@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermarket.Client", "Supermarket.Client\Supermarket.Client.csproj", "{82BAABFB-63A5-4713-8097-8DDC8E843ABF}"
 EndProject
@@ -30,6 +30,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySql.Contex", "MySql.Contex\MySql.Contex.csproj", "{9B2469A4-F8A6-4AFE-BB9A-913CB5AB95A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySql.Options", "MySql.Options\MySql.Options.csproj", "{3ED08524-B748-416B-B450-85E764CAC0B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{6AA4E6EA-115D-45E7-87C8-09F90FD97614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlGenerator", "XmlGenerator\XmlGenerator.csproj", "{9F2F52AE-D353-4EA7-91F7-251E8CA2BEA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlLoader", "XmlLoader\XmlLoader.csproj", "{151F0D57-564D-4094-B618-8F2C7644AAB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +87,14 @@ Global
 		{3ED08524-B748-416B-B450-85E764CAC0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ED08524-B748-416B-B450-85E764CAC0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ED08524-B748-416B-B450-85E764CAC0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2F52AE-D353-4EA7-91F7-251E8CA2BEA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2F52AE-D353-4EA7-91F7-251E8CA2BEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2F52AE-D353-4EA7-91F7-251E8CA2BEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2F52AE-D353-4EA7-91F7-251E8CA2BEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151F0D57-564D-4094-B618-8F2C7644AAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151F0D57-564D-4094-B618-8F2C7644AAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151F0D57-564D-4094-B618-8F2C7644AAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151F0D57-564D-4094-B618-8F2C7644AAB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +109,7 @@ Global
 		{72AE98C3-0D07-449D-9C8E-8F1880C52D85} = {4FB8A2F3-143D-43D4-918C-CE91385F0BD9}
 		{9B2469A4-F8A6-4AFE-BB9A-913CB5AB95A8} = {4FB8A2F3-143D-43D4-918C-CE91385F0BD9}
 		{3ED08524-B748-416B-B450-85E764CAC0B1} = {4FB8A2F3-143D-43D4-918C-CE91385F0BD9}
+		{9F2F52AE-D353-4EA7-91F7-251E8CA2BEA7} = {6AA4E6EA-115D-45E7-87C8-09F90FD97614}
+		{151F0D57-564D-4094-B618-8F2C7644AAB3} = {6AA4E6EA-115D-45E7-87C8-09F90FD97614}
 	EndGlobalSection
 EndGlobal

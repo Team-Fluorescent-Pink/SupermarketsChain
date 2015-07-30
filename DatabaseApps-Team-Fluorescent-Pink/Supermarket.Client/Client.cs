@@ -33,11 +33,13 @@
                         StaticData.GeneratePdfSalesReports();
                         break;
                     case "4":
+                        StaticData.GenerateXmlSalesByVendorReport();
                         break;
                     case "5":
                         StaticData.ExportToJsonAndMongoDb();
                         break;
                     case "6":
+                        StaticData.LoadExpenseDataFromXml();
                         break;
                     case "7":
                         StaticData.DisplayMySqlMenu();

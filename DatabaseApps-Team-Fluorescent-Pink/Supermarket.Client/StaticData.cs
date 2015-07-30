@@ -11,6 +11,8 @@
     using MySql.Options;
     using OracleImporter;
     using PdfGenerator;
+    using XmlGenerator;
+    using XmlLoader;
     
     public static class StaticData
     {
@@ -139,6 +141,24 @@
                 Console.ReadLine();
             }
         }
+
+        public static void GenerateXmlSalesByVendorReport()
+        {
+            bool successfullyGeneratedXml = XmlGenerator.GenerateXmlReports();
+
+            if (successfullyGeneratedXml)
+            {
+                Console.WriteLine("Xml Sales Reports succsessfully generated.");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Error");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
+            }
+        }
         
         public static void DisplayMySqlMenu()
         {
@@ -169,6 +189,28 @@
                         Console.WriteLine("Invalid selection!");
                         break;
                 }
+            }
+        }
+
+        public static void LoadExpenseDataFromXml()
+        {
+            DateTime fromDate;
+            DateTime toDate;
+            ReadDateInterval(out fromDate, out toDate);
+
+            bool successfullyGeneratedXml = XmlGenerator.LoadXmlReports(fromDate, toDate);
+
+            if (successfullyLoadedXml)
+            {
+                Console.WriteLine("Xml Sales Reports succsessfully loaded.");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Error");
+                Console.WriteLine("Pess ENTER to continue");
+                Console.ReadLine();
             }
         }
 

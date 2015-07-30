@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>6e1c54c4-9d05-4696-a891-4e299cc68342</ProjectGuid>
+    <ProjectGuid>{9F2F52AE-D353-4EA7-91F7-251E8CA2BEA7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LoadExpenseDataFromXml</RootNamespace>
-    <AssemblyName>LoadExpenseDataFromXml</AssemblyName>
+    <RootNamespace>XmlGenerator</RootNamespace>
+    <AssemblyName>XmlGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,6 +33,22 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XmlGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MsSql.Data\MsSql.Data.csproj">
+      <Project>{f981726e-6abd-4fc8-af1f-a8f9995c7513}</Project>
+      <Name>MsSql.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MsSql.Models\MsSql.Models.csproj">
+      <Project>{176abc5c-56f8-4d24-a761-db937fa9939f}</Project>
+      <Name>MsSql.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

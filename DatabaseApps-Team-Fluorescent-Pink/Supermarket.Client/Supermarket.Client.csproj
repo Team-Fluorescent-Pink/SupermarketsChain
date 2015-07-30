@@ -105,6 +105,14 @@
       <Project>{d420c3e2-f258-4cac-9143-e54d48ede2e3}</Project>
       <Name>PdfGenerator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XmlGenerator\XmlGenerator.csproj">
+      <Project>{9f2f52ae-d353-4ea7-91f7-251e8ca2bea7}</Project>
+      <Name>XmlGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XmlLoader\XmlLoader.csproj">
+      <Project>{151f0d57-564d-4094-b618-8f2c7644aab3}</Project>
+      <Name>XmlLoader</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
