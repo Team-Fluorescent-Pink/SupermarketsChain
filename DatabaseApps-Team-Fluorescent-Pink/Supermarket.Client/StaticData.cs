@@ -144,7 +144,11 @@
 
         public static void GenerateXmlSalesByVendorReport()
         {
-            bool successfullyGeneratedXml = XmlGenerator.GenerateXmlReports();
+            DateTime fromDate;
+            DateTime toDate;
+            ReadDateInterval(out fromDate, out toDate);
+
+            bool successfullyGeneratedXml = XmlGenerator.GenerateXmlReports(fromDate, toDate);
 
             if (successfullyGeneratedXml)
             {
@@ -194,11 +198,8 @@
 
         public static void LoadExpenseDataFromXml()
         {
-            DateTime fromDate;
-            DateTime toDate;
-            ReadDateInterval(out fromDate, out toDate);
-
-            bool successfullyGeneratedXml = XmlGenerator.LoadXmlReports(fromDate, toDate);
+            
+            bool successfullyGeneratedXml = XmlGenerator.LoadXmlReports();
 
             if (successfullyLoadedXml)
             {

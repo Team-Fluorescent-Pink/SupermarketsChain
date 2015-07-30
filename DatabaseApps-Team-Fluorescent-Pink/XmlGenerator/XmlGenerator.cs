@@ -8,7 +8,7 @@ namespace XmlGenerator
 {
     class XmlGenerator
     {
-        public static bool GenerateXmlReports()
+        public static bool GenerateXmlReports(DateTime fromDate, DateTime toDate)
         {
             // TODO
             return false;
