@@ -198,8 +198,8 @@
 
         public static void LoadExpenseDataFromXml()
         {
-            
-            bool successfullyGeneratedXml = XmlGenerator.LoadXmlReports();
+
+            bool successfullyLoadedXml = XmlGenerator.LoadXmlReports();
 
             if (successfullyLoadedXml)
             {
