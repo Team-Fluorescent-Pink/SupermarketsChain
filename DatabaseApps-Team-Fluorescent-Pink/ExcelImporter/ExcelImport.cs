@@ -21,18 +21,18 @@
         private const string DefaultDateFormat = "dd-MMM-yyyy";
 
         private static readonly WorksheetSettings WorksheetSettings = new WorksheetSettings
-                                                                          {
-                                                                              StartCell = 1, 
-                                                                              StartCollumn = 1, 
-                                                                              StartRow = 1, 
-                                                                              EndRowContent =
-                                                                                  "Total sum:", 
-                                                                              FirstContentRow = 3, 
-                                                                              ProductCell = 1, 
-                                                                              QuantityCell = 2, 
-                                                                              UnitPriceCell = 3, 
-                                                                              ProductSumCell = 4
-                                                                          };
+        {
+            StartCell = 1, 
+            StartCollumn = 1, 
+            StartRow = 1, 
+            EndRowContent =
+                "Total sum:", 
+            FirstContentRow = 3, 
+            ProductCell = 1, 
+            QuantityCell = 2, 
+            UnitPriceCell = 3, 
+            ProductSumCell = 4
+        };
 
         public ExcelImport(string zipPath = DefaultZipPath, string zipName = DefaultZipName)
         {

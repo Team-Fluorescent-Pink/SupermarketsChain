@@ -5,7 +5,6 @@
     using System.Windows.Forms;
 
     using ExcelImporter;
-
     using JsonAndMongoDbExporter;
     using MsSql.Data;
     using MySql.Options;
@@ -13,8 +12,8 @@
     using PdfGenerator;
     using XmlGenerator;
     using XmlLoader;
-    
-    public static class StaticData
+
+    public static class CommandExecutor
     {
         public static void Header()
         {
@@ -141,28 +140,6 @@
                 Console.ReadLine();
             }
         }
-
-        public static void GenerateXmlSalesByVendorReport()
-        {
-            DateTime fromDate;
-            DateTime toDate;
-            ReadDateInterval(out fromDate, out toDate);
-
-            bool successfullyGeneratedXml = XmlGenerator.GenerateXmlReports(fromDate, toDate);
-
-            if (successfullyGeneratedXml)
-            {
-                Console.WriteLine("Xml Sales Reports succsessfully generated.");
-                Console.WriteLine("Pess ENTER to continue");
-                Console.ReadLine();
-            }
-            else
-            {
-                Console.WriteLine("Error");
-                Console.WriteLine("Pess ENTER to continue");
-                Console.ReadLine();
-            }
-        }
         
         public static void DisplayMySqlMenu()
         {
@@ -196,20 +173,23 @@
             }
         }
 
-        public static void LoadExpenseDataFromXml()
+        public static void GenerateXmlSalesByVendorReport()
         {
+            DateTime fromDate;
+            DateTime toDate;
+            ReadDateInterval(out fromDate, out toDate);
 
-            bool successfullyLoadedXml = XmlGenerator.LoadXmlReports();
+            bool successfullyGeneratedXml = XmlReportGenerator.GenerateXmlReports(fromDate, toDate);
 
-            if (successfullyLoadedXml)
+            if (successfullyGeneratedXml)
             {
-                Console.WriteLine("Xml Sales Reports succsessfully loaded.");
+                Console.WriteLine("Xml Sales Reports succsessfully generated.");
                 Console.WriteLine("Pess ENTER to continue");
                 Console.ReadLine();
             }
             else
             {
-                Console.WriteLine("File has not been found");
+                Console.WriteLine("There are now sales in this period");
                 Console.WriteLine("Pess ENTER to continue");
                 Console.ReadLine();
             }
@@ -237,6 +217,16 @@
             }
         }
 
+        public static void LoadExpensesByVendorAndMonth()
+        {
+            var selectedFile = OpenFile();
+            XmlExpensesLoader.ImportExpensesInDatabase(selectedFile);
+
+            Console.WriteLine("Expenses successfully imported in database!");
+            Console.WriteLine("Pess ENTER to continue");
+            Console.ReadLine();
+        }
+
         private static string OpenFile()
         {
             OpenFileDialog fd = new OpenFileDialog();
@@ -245,11 +235,6 @@
 
             return path;
         }
-
-        // private static object ExtractPath(string openFile)
-        // {
-
-        // }
 
         // Source - MSDN 
         private static string ExtractFileName(string filepath)

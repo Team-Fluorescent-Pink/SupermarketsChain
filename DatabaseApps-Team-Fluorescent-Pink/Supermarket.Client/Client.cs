@@ -13,8 +13,8 @@
             while (exit)
             {
                 Console.Clear();
-                StaticData.Header();
-                StaticData.DisplayMenu();
+                CommandExecutor.Header();
+                CommandExecutor.DisplayMenu();
                 Console.Write("\nPlease, select option: ");
                 string choice = Console.ReadLine();
 
@@ -24,25 +24,25 @@
                         exit = false;
                         break;
                     case "1":
-                        StaticData.DisplayOracleSqlMenu();
+                        CommandExecutor.DisplayOracleSqlMenu();
                         break;
                     case "2":
-                        StaticData.DisplayMsSqlMenu();
+                        CommandExecutor.DisplayMsSqlMenu();
                         break;
                     case "3":
-                        StaticData.GeneratePdfSalesReports();
+                        CommandExecutor.GeneratePdfSalesReports();
                         break;
                     case "4":
-                        StaticData.GenerateXmlSalesByVendorReport();
+                        CommandExecutor.GenerateXmlSalesByVendorReport();
                         break;
                     case "5":
-                        StaticData.ExportToJsonAndMongoDb();
+                        CommandExecutor.ExportToJsonAndMongoDb();
                         break;
                     case "6":
-                        StaticData.LoadExpenseDataFromXml();
+                        CommandExecutor.LoadExpensesByVendorAndMonth();
                         break;
                     case "7":
-                        StaticData.DisplayMySqlMenu();
+                        CommandExecutor.DisplayMySqlMenu();
                         break;
                     case "8":
                         break;
